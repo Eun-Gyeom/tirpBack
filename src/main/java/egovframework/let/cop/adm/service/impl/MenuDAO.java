@@ -4,7 +4,7 @@ import java.util.List;
 import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 import org.springframework.stereotype.Repository;
 
-import egovframework.let.cop.adm.service.UserMngVO;
+import egovframework.let.cop.adm.service.MenuVO;
 
 /**
  * 사용자 속성정보 관리를 위한 데이터 접근 클래스
@@ -23,44 +23,44 @@ import egovframework.let.cop.adm.service.UserMngVO;
  *
  *  </pre>
  */
-@Repository("UserMngDAO")
-public class UserMngDAO extends EgovAbstractMapper {
+@Repository("MenuDAO")
+public class MenuDAO extends EgovAbstractMapper {
 
     /**
      * 등록된 사용자 속성정보를 삭제한다.
      *
-     * @param UserMngVO
+     * @param MenuVO
      */
-    public void deleteUserMngInf(UserMngVO userMngVO) throws Exception {
-	delete("UserMngDAO.deleteUserMngInf", userMngVO);
+    public void deleteMenuInf(MenuVO userMngVO) throws Exception {
+	delete("MenuDAO.deleteMenuInf", userMngVO);
     }
 
     /**
      * 신규 사용자 속성정보를 등록한다.
      *
-     * @param UserMng
+     * @param Menu
      */
-    public int insertUserMngInf(UserMngVO userMngVO) throws Exception {
-	return (int)insert("UserMngDAO.insertUserMngInf", userMngVO);
+    public int insertMenuInf(MenuVO userMngVO) throws Exception {
+	return (int)insert("MenuDAO.insertMenuInf", userMngVO);
     }
 
     /**
      * 사용자 속성정보 한 건을 상세조회 한다.
      *
-     * @param UserMngVO
+     * @param MenuVO
      */
-    public UserMngVO selectUserMngInf(UserMngVO userMngVO) throws Exception {
-	return (UserMngVO)selectOne("UserMngDAO.selectUserMngInf", userMngVO);
+    public MenuVO selectMenuInf(MenuVO userMngVO) throws Exception {
+	return (MenuVO)selectOne("MenuDAO.selectMenuInf", userMngVO);
     }
 
     /**
      * 사용자 속성정보 목록을 조회한다.
      *
-     * @param UserMngVO
+     * @param MenuVO
      */
     @SuppressWarnings("unchecked")
-    public List<UserMngVO> selectUserMngInfs(UserMngVO vo) throws Exception {
-	return (List<UserMngVO>) list("UserMngDAO.selectUserMngInfs", vo);
+    public List<MenuVO> selectMenuInfs(MenuVO vo) throws Exception {
+	return (List<MenuVO>) list("MenuDAO.selectMenuInfs", vo);
     }
 
     /**
@@ -70,35 +70,35 @@ public class UserMngDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    public int selectUserMngInfsCnt(UserMngVO vo) throws Exception {
-	return (Integer)selectOne("UserMngDAO.selectUserMngInfsCnt", vo);
+    public int selectMenuInfsCnt(MenuVO vo) throws Exception {
+	return (Integer)selectOne("MenuDAO.selectMenuInfsCnt", vo);
     }
     /**
      * 사용자를 확인합니다.
      *
-     * @param UserMng
+     * @param Menu
      * @return 일치하는 사용자 개수
      * @throws Exception
      */
-    public int selectUserMngCount(UserMngVO userMngVO) throws Exception {
-        return (Integer)selectOne("UserMngDAO.selectUserMngCount", userMngVO);
+    public int selectMenuCount(MenuVO userMngVO) throws Exception {
+        return (Integer)selectOne("MenuDAO.selectMenuCount", userMngVO);
     }
 
     /**
      * 사용자정보를 수정한다.
      *
-     * @param UserMng
+     * @param Menu
      */
-    public void updateUserMngInf(UserMngVO userMngVO) throws Exception {
-	update("UserMngDAO.updateUserMngInf", userMngVO);
+    public void updateMenuInf(MenuVO userMngVO) throws Exception {
+	update("MenuDAO.updateMenuInf", userMngVO);
     }
 
     /**
      * 템플릿의 유효여부를 점검한다.
      *
-     * @param UserMngVO
+     * @param MenuVO
      */
-    public boolean validateTemplate(UserMngVO vo) throws Exception {
+    public boolean validateTemplate(MenuVO vo) throws Exception {
 	return true;
     }
 

@@ -28,7 +28,7 @@ import lombok.Setter;
 @Schema(description = "사용자 속성 정보 엔티티")
 @Getter
 @Setter
-public class UserMng implements Serializable {
+public class Menu implements Serializable {
 
     /**
 	 * serialVersion UID

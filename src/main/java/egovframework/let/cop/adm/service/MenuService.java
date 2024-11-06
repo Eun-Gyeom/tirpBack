@@ -1,6 +1,5 @@
 package egovframework.let.cop.adm.service;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,78 +19,78 @@ import java.util.Map;
  *  
  *  </pre>
  */
-public interface UserMngService {
+public interface MenuService {
 
 	/**
 	 * 등록된 사용자 속성정보를 삭제한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @exception Exception Exception
 	 */
-	public void deleteUserMngInf(UserMngVO userMngVO)
+	public void deleteMenuInf(MenuVO userMngVO)
 	  throws Exception;
 
 	/**
 	 * 신규 사용자 속성정보를 생성한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @exception Exception Exception
 	 */
-	public String insertUserMngInf(UserMngVO userMngVO)
+	public String insertMenuInf(MenuVO userMngVO)
 	  throws Exception;
 
 	/**
 	 * 사용자 속성정보 한 건을 상세조회한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @exception Exception Exception
 	 */
-	public UserMngVO selectUserMngInf(UserMngVO userMngVO)
+	public MenuVO selectMenuInf(MenuVO userMngVO)
 	  throws Exception;
 
 	/**
 	 * 사용자 속성 정보의 목록을 조회 한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @exception Exception Exception
 	 */
-	public Map<String, Object> selectUserMngInfs(UserMngVO userMngVO)
+	public Map<String, Object> selectMenuInfs(MenuVO userMngVO)
 	  throws Exception;
 
 	/**
 	 * 사용자 정보를 확인한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @return boolean
 	 * @exception Exception Exception
 	 */
-	public boolean isUserMng(UserMngVO userMngVO)
+	public boolean isMenu(MenuVO userMngVO)
 	  throws Exception;
 
 
 	/**
 	 * 사용자 속성정보를 수정한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @exception Exception Exception
 	 */
-	public void updateUserMngInf(UserMngVO userMngVO)
+	public void updateMenuInf(MenuVO userMngVO)
 	  throws Exception;
 
 	/**
 	 * 템플릿의 유효여부를 점검한다.
-	 * @param UserMngVO
+	 * @param MenuVO
 	 * 
 	 * @param userMngVO
 	 * @exception Exception Exception
 	 */
-	public void validateTemplate(UserMngVO userMngVO)
+	public void validateTemplate(MenuVO userMngVO)
 	  throws Exception;
 
 }

@@ -10,8 +10,8 @@ import org.egovframe.rte.fdl.idgnr.EgovIdGnrService;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.springframework.stereotype.Service;
 
-import egovframework.let.cop.adm.service.UserMngService;
-import egovframework.let.cop.adm.service.UserMngVO;
+import egovframework.let.cop.adm.service.MenuService;
+import egovframework.let.cop.adm.service.MenuVO;
 import egovframework.let.cop.com.service.EgovUserInfManageService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,11 +34,11 @@ import lombok.extern.slf4j.Slf4j;
  *  </pre>
  */
 @Slf4j
-@Service("UserMngService")
-public class UserMngServiceImpl extends EgovAbstractServiceImpl implements UserMngService {
+@Service("MenuService")
+public class MenuServiceImpl extends EgovAbstractServiceImpl implements MenuService {
 
-    @Resource(name = "UserMngDAO")
-    private UserMngDAO userMngDAO;
+    @Resource(name = "MenuDAO")
+    private MenuDAO userMngDAO;
 
     @Resource(name = "EgovUserInfManageService")
     private EgovUserInfManageService userService;
@@ -52,26 +52,26 @@ public class UserMngServiceImpl extends EgovAbstractServiceImpl implements UserM
     /**
      * 등록된 사용자 속성정보를 삭제한다.
      *
-     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#deleteUserMngInf(egovframework.let.cop.bbs.brd.service.UserMng)
+     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#deleteMenuInf(egovframework.let.cop.bbs.brd.service.Menu)
      */
-    public void deleteUserMngInf(UserMngVO userMngVO) throws Exception {
-	userMngDAO.deleteUserMngInf(userMngVO);
+    public void deleteMenuInf(MenuVO userMngVO) throws Exception {
+	userMngDAO.deleteMenuInf(userMngVO);
 
-	UserMngVO bdUseInf = new UserMngVO();
+	MenuVO bdUseInf = new MenuVO();
 
 	bdUseInf.setUserId(userMngVO.getUserId());
 	bdUseInf.setLastProcId(userMngVO.getLastProcId());
 
-	userMngDAO.deleteUserMngInf(bdUseInf);
+	userMngDAO.deleteMenuInf(bdUseInf);
     }
 
     /**
      * 신규 사용자 속성정보를 생성한다.
      *
-     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#insertUserMngInf(egovframework.let.cop.bbs.brd.service.UserMng)
+     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#insertMenuInf(egovframework.let.cop.bbs.brd.service.Menu)
      */
-    public String insertUserMngInf(UserMngVO userMngVO) throws Exception {
-	userMngDAO.insertUserMngInf(userMngVO);
+    public String insertMenuInf(MenuVO userMngVO) throws Exception {
+	userMngDAO.insertMenuInf(userMngVO);
 
 	return userMngVO.getUserId();
     }
@@ -80,15 +80,15 @@ public class UserMngServiceImpl extends EgovAbstractServiceImpl implements UserM
     /**
      * 사용자 속성정보 한 건을 상세조회한다.
      *
-     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#selectUserMngInf(egovframework.let.cop.adm.service.brd.service.UserMngVO)
+     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#selectMenuInf(egovframework.let.cop.adm.service.brd.service.MenuVO)
      */
-    public UserMngVO selectUserMngInf(UserMngVO searchVO) throws Exception {
+    public MenuVO selectMenuInf(MenuVO searchVO) throws Exception {
 	//---------------------------------
 	// 2009.06.26 : 2단계 기능 추가
 	//---------------------------------
-	//return attrbMngDAO.selectUserMngInf(searchVO);
+	//return attrbMngDAO.selectMenuInf(searchVO);
 
-	UserMngVO result = userMngDAO.selectUserMngInf(searchVO);
+	MenuVO result = userMngDAO.selectMenuInf(searchVO);
 
 	return result;
 	////-------------------------------
@@ -98,11 +98,11 @@ public class UserMngServiceImpl extends EgovAbstractServiceImpl implements UserM
     /**
      * 사용자 속성 정보의 목록을 조회 한다.
      *
-     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#selectUserMngInfs(egovframework.let.cop.adm.service.brd.service.UserMngVO)
+     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#selectMenuInfs(egovframework.let.cop.adm.service.brd.service.MenuVO)
      */
-    public Map<String, Object> selectUserMngInfs(UserMngVO searchVO) throws Exception {
-	List<UserMngVO> result = userMngDAO.selectUserMngInfs(searchVO);
-	int cnt = userMngDAO.selectUserMngInfsCnt(searchVO);
+    public Map<String, Object> selectMenuInfs(MenuVO searchVO) throws Exception {
+	List<MenuVO> result = userMngDAO.selectMenuInfs(searchVO);
+	int cnt = userMngDAO.selectMenuInfsCnt(searchVO);
 
 	Map<String, Object> map = new HashMap<String, Object>();
 
@@ -115,30 +115,30 @@ public class UserMngServiceImpl extends EgovAbstractServiceImpl implements UserM
     /**
      * 사용자 속성정보를 수정한다.
      *
-     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#updateUserMngInf(egovframework.let.cop.bbs.brd.service.UserMng)
+     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#updateMenuInf(egovframework.let.cop.bbs.brd.service.Menu)
      */
-    public void updateUserMngInf(UserMngVO userMng) throws Exception {
-		userMngDAO.updateUserMngInf(userMng);
+    public void updateMenuInf(MenuVO userMng) throws Exception {
+		userMngDAO.updateMenuInf(userMng);
     }
 
     /**
      * 템플릿의 유효여부를 점검한다.
      *
-     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#validateTemplate(egovframework.let.cop.adm.service.brd.service.UserMngVO)
+     * @see egovframework.let.cop.bbs.brd.service.EgovBBSAttributeManageService#validateTemplate(egovframework.let.cop.adm.service.brd.service.MenuVO)
      */
-    public void validateTemplate(UserMngVO searchVO) throws Exception {
+    public void validateTemplate(MenuVO searchVO) throws Exception {
     	log.debug("validateTemplate method ignored...");
     }
 
     /**
      * 사용자 정보를 확인합니다.
      *
-     * @param userMngVO 사용자 정보를 담고 있는 UserMngVO 객체
+     * @param userMngVO 사용자 정보를 담고 있는 MenuVO 객체
      * @return 존재하는 고개인지 일치 여부 (true: 일치, false: 불일치)
      * @throws Exception 데이터베이스 조회 중 발생할 수 있는 예외
      */
-    public boolean isUserMng(UserMngVO userMngVO) throws Exception {
-        int matchCount = userMngDAO.selectUserMngCount(userMngVO);
+    public boolean isMenu(MenuVO userMngVO) throws Exception {
+        int matchCount = userMngDAO.selectMenuCount(userMngVO);
         return matchCount > 0;
     }
 
